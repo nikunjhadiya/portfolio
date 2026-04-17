@@ -1,3 +1,6 @@
+// API BASE URL (LIVE)
+const API_URL = "https://portfolio-backend-rokz.onrender.com/api/contact";
+
 // AUTH CHECK
 (function () {
   if (sessionStorage.getItem("auth") !== "true") {
@@ -9,51 +12,58 @@ let editId = null;
 
 // LOAD DATA
 async function loadData() {
-  const res = await fetch("http://localhost:5000/api/contact");
-  const data = await res.json();
+  try {
+    const res = await fetch(API_URL);
+    const data = await res.json();
 
-  const table = document.getElementById("data");
-  table.innerHTML = "";
+    const table = document.getElementById("data");
+    table.innerHTML = "";
 
-  data.forEach((item) => {
-    table.innerHTML += `
-      <tr>
-        <td>${item.name}</td>
-        <td>${item.email}</td>
-        <td title="${item.message}">${item.message}</td>
-        <td>
-  <button onclick="viewMessage(\`${item.message}\`)">Message</button>
+    data.forEach((item) => {
+      table.innerHTML += `
+        <tr>
+          <td>${item.name}</td>
+          <td>${item.email}</td>
+          <td title="${item.message}">${item.message}</td>
+          <td>
+            <button onclick="viewMessage(\`${item.message}\`)">Message</button>
 
-  <button onclick="editData('${item._id}', '${item.name}', '${item.email}', \`${item.message}\`)">
-    Edit
-  </button>
+            <button onclick="editData('${item._id}', '${item.name}', '${item.email}', \`${item.message}\`)">
+              Edit
+            </button>
 
-  <button onclick="deleteData('${item._id}')">
-    Delete
-  </button>
-</td>
-      </tr>
-    `;
-  });
-  let totalUsers = data.length;
-  let totalMessages = 0;
-  let emptyMessages = 0;
+            <button onclick="deleteData('${item._id}')">
+              Delete
+            </button>
+          </td>
+        </tr>
+      `;
+    });
 
-  data.forEach((item) => {
-    if (item.message && item.message !== "No message provided") {
-      totalMessages++;
-    } else {
-      emptyMessages++;
-    }
-  });
+    // SUMMARY
+    let totalUsers = data.length;
+    let totalMessages = 0;
+    let emptyMessages = 0;
 
-  document.getElementById("summary").textContent =
-    `Total Users: ${totalUsers} | Messages: ${totalMessages} | Empty Messages: ${emptyMessages}`;
+    data.forEach((item) => {
+      if (item.message && item.message !== "No message provided") {
+        totalMessages++;
+      } else {
+        emptyMessages++;
+      }
+    });
+
+    document.getElementById("summary").textContent =
+      `Total Users: ${totalUsers} | Messages: ${totalMessages} | Empty Messages: ${emptyMessages}`;
+
+  } catch (err) {
+    console.log("Error loading data:", err);
+  }
 }
 
 // DELETE DATA
 async function deleteData(id) {
-  await fetch(`http://localhost:5000/api/contact/${id}`, {
+  await fetch(`${API_URL}/${id}`, {
     method: "DELETE",
   });
 
@@ -84,7 +94,7 @@ async function saveUpdate() {
 
   if (!name || !email || !message) return;
 
-  await fetch(`http://localhost:5000/api/contact/${editId}`, {
+  await fetch(`${API_URL}/${editId}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -100,19 +110,22 @@ async function saveUpdate() {
   loadData();
 }
 
-// LOGOUT;
+// LOGOUT
 function logout() {
   sessionStorage.removeItem("auth");
   window.location.replace("../login.html");
 }
 
+// VIEW FULL MESSAGE
 function viewMessage(msg) {
   document.getElementById("fullMessage").innerText = msg;
   document.getElementById("viewModal").style.display = "flex";
 }
 
+// CLOSE VIEW MODAL
 function closeView() {
   document.getElementById("viewModal").style.display = "none";
 }
+
 // INIT
 loadData();
