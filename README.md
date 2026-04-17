@@ -173,11 +173,6 @@ Password : admin123
 
 ---
 
-### 🔐 Admin Login
-![Login Page](./screenshots/dashboardlogin.png)
-
----
-
 ### 🔑 Dashboard Login
 ![Dashboard Login](./screenshots/dashboard-login.png.png)
 
