@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css" />
+
+    <!-- Icons (optional if you use buttons/icons later) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="top-bar">
+            <h1>Portfolio Data</h1>
+
+            <div class="actions">
+                <!-- LOGOUT -->
+                <button class="btn logout" onclick="logout()">Logout</button>
+            </div>
+        </div>
+        <p id="summary" style="
+                    margin-top: 20px;
+                    font-size: 14px;
+                    text-align: right;
+                    color: #94a3b8;
+                  "></p>
+
+        <!-- TABLE -->
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Message</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="data"></tbody>
+            </table>
+
+        </div>
+    </div>
+
+    <!-- EDIT MODAL -->
+    <div id="editModal" class="modal">
+        <div class="modal-box">
+            <!-- HEADER -->
+            <div class="modal-header">
+                <h2>Edit User</h2>
+                <span class="close" onclick="closeModal()">×</span>
+            </div>
+
+            <!-- BODY -->
+            <div class="modal-body">
+                <input type="text" id="editName" placeholder="Name" />
+                <input type="email" id="editEmail" placeholder="Email" />
+                <textarea id="editMessage" placeholder="Message"></textarea>
+
+                <button onclick="saveUpdate()">Save Changes</button>
+            </div>
+        </div>
+    </div>
+    <!-- VIEW MESSAGE MODAL -->
+    <div id="viewModal" class="modal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2>Full Message</h2>
+                <span class="close" onclick="closeView()">×</span>
+            </div>
+
+            <div class="modal-body">
+                <p id="fullMessage"></p>
+            </div>
+        </div>
+    </div>
+    <!-- JS FILE -->
+    <script src="dashboard.js"></script>
+</body>
+
+</html>

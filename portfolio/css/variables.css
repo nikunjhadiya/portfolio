@@ -1,0 +1,35 @@
+/* variables.css */
+:root {
+  /* Colors */
+  --color-bg:        #0a0a0c;
+  --color-bg-2:      #111116;
+  --color-bg-3:      #16161e;
+  --color-surface:   #1c1c26;
+  --color-border:    #2a2a38;
+  --color-accent:    #e8ff47;
+  --color-accent-2:  #ff6b35;
+  --color-text:      #e8e6e1;
+  --color-text-muted:#7a7890;
+  --color-text-dim:  #3a3a50;
+
+  /* Typography */
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body:    'Crimson Pro', serif;
+  --font-mono:    'DM Mono', monospace;
+
+  /* Spacing */
+  --space-xs:  0.5rem;
+  --space-sm:  1rem;
+  --space-md:  2rem;
+  --space-lg:  4rem;
+  --space-xl:  8rem;
+
+  /* Transitions */
+  --ease:        cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:     cubic-bezier(0.4, 0, 1, 1);
+  --duration:    0.6s;
+
+  /* Layout */
+  --max-width: 1200px;
+  --nav-height: 72px;
+}

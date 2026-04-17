@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nikunj Hadiya — Full-Stack Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300&family=DM+Mono:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/about.css" />
+  <link rel="stylesheet" href="css/skills.css" />
+  <link rel="stylesheet" href="css/projects.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+
+<body>
+
+  <!-- Custom cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav__logo">NH<span class="accent">.</span></div>
+    <ul class="nav__links">
+      <li><a href="#about" class="nav__link">About</a></li>
+      <li><a href="#skills" class="nav__link">Skills</a></li>
+      <li><a href="#projects" class="nav__link">Projects</a></li>
+      <li><a href="#contact" class="nav__link">Contact</a></li>
+    </ul>
+    <button class="nav__menu-btn" id="menuBtn" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="#skills" class="mobile-link">Skills</a></li>
+      <li><a href="#projects" class="mobile-link">Projects</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero__bg-text">DEV</div>
+    <div class="hero__content">
+      <p class="hero__eyebrow reveal">Available for work · 2026</p>
+      <h1 class="hero__name reveal">
+        <span class="line">Nikunj</span>
+        <span class="line accent-line">Hadiya</span>
+      </h1>
+      <p class="hero__role reveal">Python Full-Stack Developer & Data Analyst</p>
+      <p class="hero__tagline reveal">I build scalable web applications with React and Django, and transform data into
+        actionable insights using Power BI and
+        Data Science.</p>
+      <div class="hero__cta reveal">
+        <a href="#projects" class="btn btn--primary">View My Work</a>
+        <a href="#contact" class="btn btn--outline">Contact Me</a>
+      </div>
+    </div>
+    <div class="hero__scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="section-label">01 — About</div>
+      <div class="about__grid">
+        <div class="about__text">
+          <h2 class="section-title reveal">Building modern web applications & data-driven solutions</h2>
+          <p class="reveal">
+            I'm a Frontend Developer with 1+ year of professional experience
+            building scalable and responsive web applications using React.js, JavaScript, HTML, and CSS.
+          </p>
+
+          <p class="reveal">
+            I have also completed training in Python Full-Stack Development and Data Science,
+            where I worked with Django, MySQL, and Power BI to build data-driven applications and dashboards.
+          </p>
+
+          <p class="reveal">
+            I’m passionate about expanding my skills into backend development and data analytics
+            to build complete end-to-end and insight-driven solutions.
+          </p>
+          <div class="about__stats reveal">
+            <div class="stat">
+              <span class="stat__number">5+</span>
+              <span class="stat__label">Projects Built</span>
+            </div>
+            <div class="stat">
+              <span class="stat__number">1+</span>
+              <span class="stat__label">Years Exp.</span>
+            </div>
+            <div class="stat">
+              <span class="stat__number">6+</span>
+              <span class="stat__label">Technologies</span>
+            </div>
+          </div>
+        </div>
+        <div class="about__image-wrap reveal">
+          <div class="about__image-placeholder">
+            <img src="assets/myphoto.PNG" alt="Nikunj Hadiya" class="about__img">
+          </div>
+          <div class="about__image-border"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills section" id="skills">
+    <div class="container">
+      <div class="section-label">02 — Skills</div>
+      <h2 class="section-title reveal">My Tech Stack</h2>
+      <div class="skills__grid">
+        <div class="skill-category reveal">
+          <h3 class="skill-category__title">Frontend</h3>
+          <div class="skill-tags">
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS3</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">React</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Tailwind CSS</span>
+          </div>
+        </div>
+        <div class="skill-category reveal">
+          <h3 class="skill-category__title">Backend</h3>
+          <div class="skill-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Django</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">REST APIs</span>
+          </div>
+        </div>
+        <div class="skill-category reveal">
+          <h3 class="skill-category__title">Tools & DevOps</h3>
+          <div class="skill-tags">
+            <span class="tag">Power BI</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">NumPy</span>
+            <span class="tag">Data Analysis</span>
+            <span class="tag">Git</span>
+            <span class="tag">Figma</span>
+          </div>
+        </div>
+      </div>
+      <div class="skills__cards reveal">
+
+        <div class="skill-card">
+          <h4>Frontend Development</h4>
+          <p>
+            Building responsive and interactive user interfaces using React.js,
+            JavaScript, and modern CSS frameworks.
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <h4>Backend Development</h4>
+          <p>
+            Developing scalable server-side applications using Python, Django,
+            and REST APIs with database integration.
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <h4>Data Analysis</h4>
+          <p>
+            Analyzing data using Pandas and NumPy, and creating dashboards
+            with Power BI for actionable insights.
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <h4>UI Development</h4>
+          <p>
+            Designing clean and user-friendly interfaces with a focus on
+            usability, accessibility, and performance.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects section" id="projects">
+    <div class="container">
+      <div class="section-label">03 — Work</div>
+      <h2 class="section-title reveal">Featured Projects</h2>
+
+      <div class="projects__grid">
+
+        <!-- Project 01 -->
+        <article class="project-card reveal" data-index="01">
+          <div class="project-card__number">01</div>
+          <div class="project-card__content">
+            <div class="project-card__tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+            <h3 class="project-card__title">Restaurant Website</h3>
+            <p class="project-card__desc">
+              Developed a responsive restaurant website with dynamic menu layout and smooth UI interactions,
+              focusing on clean UI/UX design and user engagement.
+            </p>
+            <div class="project-card__links">
+              <a href="#" class="project-link">Live Demo → Coming Soon</a>
+              <a href="https://github.com/nikunjhadiya" target="_blank" rel="noopener noreferrer"
+                class="project-link project-link--ghost">
+                GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 02 -->
+        <article class="project-card reveal" data-index="02">
+          <div class="project-card__number">02</div>
+          <div class="project-card__content">
+            <div class="project-card__tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Firebase</span>
+            </div>
+            <h3 class="project-card__title">Library Management System</h3>
+            <p class="project-card__desc">
+              Built a library system with CRUD operations and real-time database integration using Firebase,
+              enabling efficient book tracking and management.
+            </p>
+            <div class="project-card__links">
+              <a href="#" class="project-link">Live Demo → Coming Soon</a>
+              <a href="https://github.com/nikunjhadiya" target="_blank" rel="noopener noreferrer"
+                class="project-link project-link--ghost">
+                GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 03 -->
+        <article class="project-card reveal" data-index="03">
+          <div class="project-card__number">03</div>
+          <div class="project-card__content">
+            <div class="project-card__tags">
+              <span>React</span><span>TypeScript</span><span>Redux</span>
+            </div>
+            <h3 class="project-card__title">CircleUp – Community Manager</h3>
+            <p class="project-card__desc">
+              Developed a community management application with role-based access, real-time validation,
+              and optimized UI performance using React and Redux Toolkit.
+            </p>
+            <div class="project-card__links">
+              <a href="#" class="project-link">Live Demo → Coming Soon</a>
+              <a href="https://github.com/nikunjhadiya" target="_blank" rel="noopener noreferrer"
+                class="project-link project-link--ghost">
+                GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 04 -->
+        <article class="project-card reveal" data-index="04">
+          <div class="project-card__number">04</div>
+          <div class="project-card__content">
+            <div class="project-card__tags">
+              <span>React</span><span>Node.js</span><span>MongoDB</span><span>Tailwind</span>
+            </div>
+            <h3 class="project-card__title">Elite IT – Company Website</h3>
+            <p class="project-card__desc">
+              Built a full-stack IT company website with React (Vite) and Express, including developer hiring form,
+              resume upload, blog system, and secure backend APIs.
+            </p>
+            <div class="project-card__links">
+              <a href="#" class="project-link">Live Demo → Coming Soon</a>
+              <a href="https://github.com/nikunjhadiya" target="_blank" rel="noopener noreferrer"
+                class="project-link project-link--ghost">
+                GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+        <!-- Project 05 -->
+        <article class="project-card reveal" data-index="05">
+          <div class="project-card__number">05</div>
+          <div class="project-card__content">
+
+            <div class="project-card__tags">
+              <span>Power BI</span><span>Pandas</span><span>Data Analysis</span>
+            </div>
+
+            <h3 class="project-card__title" style="color: var(--color-accent);">
+              Project In Progress
+            </h3>
+
+            <p class="project-card__desc">
+              Currently working on a data analytics project to build interactive dashboards
+              and generate meaningful business insights using modern data tools.
+            </p>
+
+            <div class="project-card__links">
+              <span class="project-link project-link--ghost">Coming Soon</span>
+            </div>
+
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="section-label">04 — Contact</div>
+
+      <h2 class="section-title reveal">Let’s Work Together</h2>
+
+      <p class="contact__intro reveal">
+        I'm currently open to opportunities as a Python Full-Stack Developer or Data Analyst.
+        Have a project or idea? Let’s connect and build something impactful.
+      </p>
+
+      <div class="contact__layout">
+
+        <!-- FORM -->
+        <form class="contact__form reveal" id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--full">
+            Send Message →
+          </button>
+
+          <p class="form__status" id="formStatus"></p>
+        </form>
+
+        <!-- CONTACT INFO -->
+        <div class="contact__info reveal">
+
+          <div class="contact__item">
+            <span class="contact__item-label">Email</span>
+            <a href="mailto:ahirnikunj1122@gmail.com">
+              ahirnikunj1122@gmail.com
+            </a>
+          </div>
+
+          <div class="contact__item">
+            <span class="contact__item-label">Phone</span>
+            <span>+91 99783 13016</span>
+          </div>
+
+          <div class="contact__item">
+            <span class="contact__item-label">Location</span>
+            <span>India</span>
+          </div>
+
+          <div class="contact__item">
+            <span class="contact__item-label">Availability</span>
+            <span class="available-badge">● Open to Work</span>
+          </div>
+
+          <div class="contact__socials">
+            <a href="https://github.com/nikunjhadiya" target="_blank" rel="noopener noreferrer" class="social-link">
+              GitHub
+            </a>
+
+            <a href="https://linkedin.com/in/nikunjhadiya" target="_blank" rel="noopener noreferrer"
+              class="social-link">
+              LinkedIn
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__logo">NH<span class="accent">.</span></span>
+        <span class="footer__copy">© 2026 Nikunj Hadiya. Built with code & creativity</span>
+        <a href="#home" class="footer__back-top">Back to Top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/cursor.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/skills.js"></script>
+  <script src="js/contact.js"></script>
+</body>
+
+</html>

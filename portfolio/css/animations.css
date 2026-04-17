@@ -1,0 +1,112 @@
+/* Reveal on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children */
+.reveal:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.reveal:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
+.reveal:nth-child(4) {
+  transition-delay: 0.3s;
+}
+
+/* Custom cursor */
+.cursor {
+  width: 8px;
+  height: 8px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s, background 0.2s;
+}
+
+.cursor-follower {
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(232, 255, 71, 0.4);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width 0.35s var(--ease), height 0.35s var(--ease), border-color 0.35s;
+}
+
+body:has(a:hover) .cursor-follower,
+body:has(button:hover) .cursor-follower {
+  width: 56px;
+  height: 56px;
+  border-color: rgba(232, 255, 71, 0.6);
+}
+
+/* Page load stagger for hero */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero .hero__eyebrow {
+  animation: fadeUp 0.8s var(--ease) 0.2s both;
+}
+
+.hero .hero__name {
+  animation: fadeUp 0.8s var(--ease) 0.4s both;
+}
+
+.hero .hero__role {
+  animation: fadeUp 0.8s var(--ease) 0.55s both;
+}
+
+.hero .hero__tagline {
+  animation: fadeUp 0.8s var(--ease) 0.65s both;
+}
+
+.hero .hero__cta {
+  animation: fadeUp 0.8s var(--ease) 0.75s both;
+}
+
+/* Background text parallax feel */
+.hero__bg-text {
+  animation: bgDrift 20s ease-in-out infinite alternate;
+}
+
+@keyframes bgDrift {
+  from {
+    transform: translateY(-48%) translateX(0);
+  }
+
+  to {
+    transform: translateY(-52%) translateX(-2%);
+  }
+}
+
+@media (max-width: 768px) {
+
+  .cursor,
+  .cursor-follower {
+    display: none;
+  }
+}
