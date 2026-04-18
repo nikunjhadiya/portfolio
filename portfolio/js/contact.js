@@ -48,7 +48,7 @@
       isValid = false;
     }
 
-  //  EMAIL VALIDATION
+    //  EMAIL VALIDATION
     const emailRegex =
       /^[^\s@]+@[^\s@]+\.(com|net|org|edu|gov|co|in|io|ai|tech)$/i;
 
@@ -74,13 +74,13 @@
       return;
     }
 
-  // SEND DATA
+    // SEND DATA
     const btn = form.querySelector('button[type="submit"]');
     btn.textContent = "Sending...";
     btn.disabled = true;
 
     try {
-      const res = await fetch("https://portfolio-backend-rokz.onrender.com", {
+      const res = await fetch("https://portfolio-backend-rokz.onrender.com/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -98,16 +98,16 @@
         status.textContent = data.message || "Something went wrong";
         status.style.color = "red";
       }
-    } catch {
-      status.textContent = "Server error. Try again";
-      status.style.color = "red";
+    } catch (err) {
+      console.log("Fetch error:", err);
+      status.textContent = "";
     }
 
-    btn.textContent = "Send Message →";
-    btn.disabled = false;
+  btn.textContent = "Send Message →";
+  btn.disabled = false;
 
-    setTimeout(() => {
-      status.textContent = "";
-    }, 4000);
-  });
-})();
+  setTimeout(() => {
+    status.textContent = "";
+  }, 4000);
+});
+}) ();
