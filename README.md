@@ -1,4 +1,4 @@
-# 🌐 Portfolio + Admin Dashboard (Full Stack Project)
+# 🌐 Portfolio & Admin Dashboard – Full Stack Web Application
 
 This is a full-stack **Portfolio Website with Admin Dashboard** built using:
 
