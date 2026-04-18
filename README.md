@@ -103,7 +103,7 @@ PORTFOLIO/
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/your-username/portfolio.git
+git clone https://github.com/nikunjhadiya/portfolio
 cd portfolio
 ```
 
@@ -196,6 +196,11 @@ Password : admin123
 - Portfolio + Admin Dashboard System
 - MongoDB + Node.js Practice Project
 
+
+## 🌐 Live Portfolio
+
+🚀 View Live Website:  
+👉 https://nikunjhadiya.netlify.app/
 ---
 
 ## 📌 Status
