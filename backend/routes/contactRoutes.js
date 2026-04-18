@@ -2,14 +2,23 @@ const express = require("express");
 const router = express.Router();
 const Contact = require("../models/Contact");
 
-// POST - CREATE
+
+// ✅ POST - CREATE CONTACT
 router.post("/", async (req, res) => {
   try {
     const { name, email, message } = req.body;
 
-    // HANDLE EMPTY 
+    if (!name || !email) {
+      return res.status(400).json({
+        success: false,
+        message: "Name and email are required",
+      });
+    }
+
     const finalMessage =
-      message && message.trim() !== "" ? message : "No message provided";
+      message && message.trim() !== ""
+        ? message
+        : "No message provided";
 
     const newContact = new Contact({
       name,
@@ -19,51 +28,76 @@ router.post("/", async (req, res) => {
 
     await newContact.save();
 
-    res.status(201).json({
+    return res.status(201).json({
       success: true,
       message: "Saved successfully",
       data: newContact,
     });
-  } catch (error) {
-    console.error("Error:", error);
 
-    res.status(500).json({
+  } catch (error) {
+    console.error("POST error:", error);
+
+    return res.status(500).json({
       success: false,
-      message: "Error saving data",
+      message: "Server error while saving data",
     });
   }
 });
 
-// GET - READ ALL
+
+// ✅ GET - READ ALL
 router.get("/", async (req, res) => {
   try {
     const data = await Contact.find().sort({ createdAt: -1 });
-    res.json(data);
+
+    return res.status(200).json(data);
+
   } catch (error) {
-    res.status(500).json({ message: "Error fetching data" });
+    console.error("GET error:", error);
+
+    return res.status(500).json({
+      message: "Error fetching data",
+    });
   }
 });
 
-// PUT - UPDATE (EDIT FEATURE)
+
+// ✅ PUT - UPDATE
 router.put("/:id", async (req, res) => {
   try {
-    const updated = await Contact.findByIdAndUpdate(req.params.id, req.body, {
-      returnDocument: "after",
-    });
+    const updated = await Contact.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true }   // ✅ FIX (important)
+    );
 
-    res.json(updated);
+    return res.status(200).json(updated);
+
   } catch (error) {
-    res.status(500).json({ message: "Error updating data" });
+    console.error("PUT error:", error);
+
+    return res.status(500).json({
+      message: "Error updating data",
+    });
   }
 });
 
-// DELETE - REMOVE DATA
+
+// ✅ DELETE - REMOVE
 router.delete("/:id", async (req, res) => {
   try {
     await Contact.findByIdAndDelete(req.params.id);
-    res.json({ message: "Deleted successfully" });
+
+    return res.status(200).json({
+      message: "Deleted successfully",
+    });
+
   } catch (error) {
-    res.status(500).json({ message: "Error deleting data" });
+    console.error("DELETE error:", error);
+
+    return res.status(500).json({
+      message: "Error deleting data",
+    });
   }
 });
 

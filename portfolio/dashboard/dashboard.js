@@ -1,6 +1,5 @@
 // API BASE URL (LIVE)
 const API_URL = "https://portfolio-backend-rokz.onrender.com/api/contact";
-
 // AUTH CHECK
 (function () {
   if (sessionStorage.getItem("auth") !== "true") {

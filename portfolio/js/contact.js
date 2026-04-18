@@ -85,7 +85,11 @@
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ name, email, message: finalMessage }),
+        body: JSON.stringify({
+          name,
+          email,
+          message: finalMessage,
+        }),
       });
 
       const data = await res.json();
@@ -98,16 +102,17 @@
         status.textContent = data.message || "Something went wrong";
         status.style.color = "red";
       }
+
     } catch (err) {
       console.log("Fetch error:", err);
       status.textContent = "";
     }
 
-  btn.textContent = "Send Message →";
-  btn.disabled = false;
+    btn.textContent = "Send Message →";
+    btn.disabled = false;
 
-  setTimeout(() => {
-    status.textContent = "";
-  }, 4000);
-});
-}) ();
+    setTimeout(() => {
+      status.textContent = "";
+    }, 4000);
+  });
+})();
