@@ -3,7 +3,7 @@ const router = express.Router();
 const Contact = require("../models/Contact");
 
 
-// ✅ POST - CREATE CONTACT
+// POST - CREATE CONTACT
 router.post("/", async (req, res) => {
   try {
     const { name, email, message } = req.body;
@@ -45,7 +45,7 @@ router.post("/", async (req, res) => {
 });
 
 
-// ✅ GET - READ ALL
+// GET - READ ALL
 router.get("/", async (req, res) => {
   try {
     const data = await Contact.find().sort({ createdAt: -1 });
@@ -62,13 +62,13 @@ router.get("/", async (req, res) => {
 });
 
 
-// ✅ PUT - UPDATE
+// PUT - UPDATE
 router.put("/:id", async (req, res) => {
   try {
     const updated = await Contact.findByIdAndUpdate(
       req.params.id,
       req.body,
-      { new: true }   // ✅ FIX (important)
+      { new: true }   // FIX (important)
     );
 
     return res.status(200).json(updated);
@@ -83,7 +83,7 @@ router.put("/:id", async (req, res) => {
 });
 
 
-// ✅ DELETE - REMOVE
+// DELETE - REMOVE
 router.delete("/:id", async (req, res) => {
   try {
     await Contact.findByIdAndDelete(req.params.id);
