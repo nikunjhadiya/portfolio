@@ -63,11 +63,15 @@ async function loadData() {
 
 // DELETE DATA
 async function deleteData(id) {
-  await fetch(`${API_URL}/${id}`, {
-    method: "DELETE",
-  });
+  try {
+    await fetch(`${API_URL}/${id}`, {
+      method: "DELETE",
+    });
 
-  loadData();
+    loadData();
+  } catch (err) {
+    console.log("Delete error:", err);
+  }
 }
 
 // OPEN EDIT MODAL
@@ -88,28 +92,27 @@ function closeModal() {
 
 // SAVE UPDATED DATA
 async function saveUpdate() {
-  const name = document.getElementById("editName").value;
-  const email = document.getElementById("editEmail").value;
-  const message = document.getElementById("editMessage").value;
+  try {
+    const name = document.getElementById("editName").value;
+    const email = document.getElementById("editEmail").value;
+    const message = document.getElementById("editMessage").value;
 
-  if (!name || !email || !message) return;
+    if (!name || !email || !message) return;
 
-  await fetch(`${API_URL}/${editId}`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      name,
-      email,
-      message,
-    }),
-  });
+    await fetch(`${API_URL}/${editId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, email, message }),
+    });
 
-  closeModal();
-  loadData();
+    closeModal();
+    loadData();
+  } catch (err) {
+    console.log("Update error:", err);
+  }
 }
-
 // LOGOUT
 function logout() {
   sessionStorage.removeItem("auth");
